@@ -30,6 +30,7 @@ Description of the files given to the students
 
 ## Documentation
 
-- [`Dataset_definitions_and_explanation.pdf`](Dataset_definitions_and_explanation.pdf) - a document that gives more details about the dataset and column names
-- [`Machine_learning_task_for_TDT4173.pdf`](Machine_learning_task_for_TDT4173.pdf) - brief introduction to the task
+- [`docs/Dataset_definitions_and_explanation.pdf`](docs/Dataset_definitions_and_explanation.pdf) - a document that gives more details about the dataset and column names
+- [`docs/Machine_learning_task_for_TDT4173.pdf`](docs/Machine_learning_task_for_TDT4173.pdf) - brief introduction to the task
+- [`docs/submission-and-grading-guidelines.pdf`](docs/submission-and-grading-guidelines.pdf) - guidelines for submission and grading
 - [`kaggle_metric.ipynb`](kaggle_metric.ipynb) - the score function we use in the Kaggle competition
