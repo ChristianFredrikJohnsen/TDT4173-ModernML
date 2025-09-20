@@ -1,6 +1,10 @@
-# Description of the files given to students
+# HobbyHorsing101
 
-- [Description of the files given to students](#description-of-the-files-given-to-students)
+![Shetland Pony](pictures/shetland-pony.jpg)
+
+Description of the files given to the students
+
+- [HobbyHorsing101](#hobbyhorsing101)
   - [Data files](#data-files)
     - [Core data](#core-data)
     - [Extended data (optional)](#extended-data-optional)
