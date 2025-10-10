@@ -1,0 +1,8 @@
+# Virtual environments
+.venv
+
+# Jupyter notebook internal stuff
+.ipynb_checkpoints
+
+# uv-generated python version file
+.python-version
