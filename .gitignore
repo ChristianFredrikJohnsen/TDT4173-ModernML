@@ -10,3 +10,5 @@
 # cached python data
 __pycache__
 
+# VSCode settings
+.vscode
