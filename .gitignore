@@ -6,3 +6,7 @@
 
 # uv-generated python version file
 .python-version
+
+# cached python data
+__pycache__
+
