@@ -1,2 +1,4 @@
 .venv
 .venv39
+testing/lightning_logs
+.venv_TFT
