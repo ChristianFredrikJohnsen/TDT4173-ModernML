@@ -1,0 +1,4 @@
+rm_id,product_id,product_version,raw_material_alloy,raw_material_format_type,stock_location
+342,91900170.0,1,SB06 Traders,24.0,DELETED_28.02:2011_SB06 anodiz
+357,91900152.0,1,"PM99,7",25.0,DELETED_28.02:2011_ST04
+357,91900152.0,3,"PM99,7",12.0,DELETED_28.02:2011_ST04
