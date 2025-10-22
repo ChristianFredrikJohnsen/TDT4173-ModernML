@@ -14,7 +14,8 @@ def test_number_of_rm_ids():
     materials_file = pd.read_csv("data/extended/materials.csv").dropna()
     unique_rm_ids = materials_file["rm_id"].nunique()
     expected_rmid_count = 203
-    assert unique_rm_ids == expected_rmid_count, f"Expected {expected_rmid_count} unique rm_ids, found {unique_rm_ids}"
+    assert unique_rm_ids == expected_rmid_count, \
+        f"Expected {expected_rmid_count} unique rm_ids, found {unique_rm_ids}"
 
 def test_extracts_unique_rm_pairs():
     """Extracts unique (rm_id, product_id) pairs from the given CSV data."""
@@ -80,6 +81,13 @@ def test_rm_id_implies_unique_product_id():
     assert (rmid_productid_counts.loc[mask] == 1).all(), \
         f"Found rm_ids other than 3362.0 associated with multiple product_id values"
 
-def test_product_id_product_version_combination_unique():
+def test_product_id_product_version_combination_not_unique():
     """Ensure that for each product_id, the highest product_version is unique."""
-    raise NotImplementedError("TODO: Implement this test")
+    materials_file = pd.read_csv("data/extended/materials.csv").dropna()
+    product_version_counts = materials_file.groupby(["product_id", "product_version"]).size().sort_values(ascending=False)
+
+    # print(product_version_counts.head(10)) # You can see that (91901460.0, 5.0) occurs 12 times
+
+    assert product_version_counts.max() > 1, "All (product_id, product_version) combinations are unique, expected some duplicates"
+    assert product_version_counts[91901460.0, 5.0] == 12, \
+        f"Expecting (91901460.0, 5.0) to occur 12 times, found {product_version_counts[91901460.0, 5.0]}"
