@@ -1,6 +1,6 @@
 # HobbyHorsing101
 
-![Shetland Pony](pictures/shetland-pony.jpg)
+![Shetland Pony](docs/pictures/shetland-pony.jpg)
 
 Description of the files given to the students
 
