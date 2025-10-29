@@ -1,8 +1,7 @@
 [project]
 name = "testing"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
+description = "David's testing environment."
 requires-python = ">=3.14"
 dependencies = [
     "lightning>=2.0.0",
