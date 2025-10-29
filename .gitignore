@@ -12,3 +12,8 @@ __pycache__
 
 # VSCode settings
 .vscode
+.venv
+.venv39
+testing/lightning_logs
+.venv_TFT
+submission/lightning_logs
