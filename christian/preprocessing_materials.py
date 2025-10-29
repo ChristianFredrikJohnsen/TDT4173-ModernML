@@ -5,9 +5,7 @@ def load_active_materials(materials_path='./data/extended/materials.csv',
                           end='2025-05-31'):
     """
     Loads and filters material data to return:
-      1. active_rms: list of raw material IDs active in the given period
-      2. product_to_rm: mapping from product_id to rm_id
-      3. materials_status: DataFrame with one row per rm_id (latest version) + 'is_active' flag
+      active_rms: list of raw material IDs active in the given period
 
     Logic:
       - Only keep newest product_version per rm_id
@@ -31,7 +29,7 @@ def load_active_materials(materials_path='./data/extended/materials.csv',
     materials = pd.read_csv(materials_path).dropna(subset=["product_id", "rm_id"])
 
     # --- 3️⃣ Add deletion_date ---
-    materials["deletion_date"] = materials["stock_location"].apply(parse_deletion_date)
+    materials["deletion_date"] = materials["stock_location"].apply(parse_deletion_date) # type: ignore
 
     # --- 4️⃣ Keep only newest version per rm_id ---
     materials_sorted = materials.sort_values(["rm_id", "product_version"], ascending=[True, False])
@@ -55,21 +53,4 @@ def load_active_materials(materials_path='./data/extended/materials.csv',
     materials_active = materials_latest[materials_latest["is_active"]].copy()
     active_rms = materials_active["rm_id"].dropna().unique().tolist()
 
-    # --- 8️⃣ Create product → rm mapping ---
-    product_to_rm = (
-        materials[["product_id", "rm_id"]]
-        .dropna()
-        .drop_duplicates()
-        .set_index("product_id")["rm_id"]
-        .to_dict()
-    )
-
-    # --- 9️⃣ Print summary ---
-    print(f"✅ Active raw materials in {start.year}-H1: {len(active_rms)}")
-    print(f"✅ Created mapping for {len(product_to_rm)} product_ids.")
-    print(f"ℹ️ Total distinct rm_ids: {materials_latest['rm_id'].nunique()}")
-    if len(product_to_rm) > 0:
-        print("Example mappings:", list(product_to_rm.items())[:5])
-
-    # --- 🔟 Return all three ---
-    return active_rms, product_to_rm, materials_latest
+    return active_rms
