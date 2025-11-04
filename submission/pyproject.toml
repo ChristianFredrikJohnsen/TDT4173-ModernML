@@ -2,7 +2,7 @@
 name = "submission"
 version = "0.1.0"
 description = "Contains all the files which are submitted."
-requires-python = ">=3.14"
+requires-python = "==3.12.10"
 dependencies = [
     "lightning>=2.5.5",
     "matplotlib>=3.10.7",
@@ -12,10 +12,18 @@ dependencies = [
     "scikit-learn>=1.7.2",
     "scipy>=1.16.3",
     "tensorboard>=2.20.0",
-    "torch>=2.9.0",
+    "torch>=2.6.0",
 ]
 
 [dependency-groups]
 dev = [
     "ipykernel>=7.1.0",
 ]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu124" }
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
