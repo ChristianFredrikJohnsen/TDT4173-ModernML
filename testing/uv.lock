@@ -1111,6 +1111,19 @@ wheels = [
 ]
 
 [[package]]
+name = "pytorch-optimizer"
+version = "3.8.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+    { name = "torch" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/56/5a/13df160942fd13d24caefe052f87f44277edcb024f5e3dbad10e08eae98d/pytorch_optimizer-3.8.2.tar.gz", hash = "sha256:ec2a73dc1ecbd272c25f7caef15032c8b63f4103cd3e30529df76b39be589b08", size = 159882, upload-time = "2025-10-26T05:58:26.465Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/fb/ee/2ca9dfcb01059e7c0ec04e98c6d59177b7a9fa6b19299e9c07cdc0002d1a/pytorch_optimizer-3.8.2-py3-none-any.whl", hash = "sha256:1719d8d3253696a78df9a448677341d8c4344bcda5e5b2212a10762329204a65", size = 269089, upload-time = "2025-10-26T05:58:24.883Z" },
+]
+
+[[package]]
 name = "pytz"
 version = "2025.2"
 source = { registry = "https://pypi.org/simple" }
@@ -1310,6 +1323,7 @@ dependencies = [
     { name = "numpy" },
     { name = "pandas" },
     { name = "pytorch-forecasting" },
+    { name = "pytorch-optimizer" },
     { name = "scikit-learn" },
     { name = "scipy" },
     { name = "tensorboard" },
@@ -1328,6 +1342,7 @@ requires-dist = [
     { name = "numpy", specifier = "<2.0.0" },
     { name = "pandas", specifier = ">=1.5.0" },
     { name = "pytorch-forecasting", specifier = ">=1.0.0" },
+    { name = "pytorch-optimizer", specifier = ">=3.8.2" },
     { name = "scikit-learn", specifier = ">=1.1.0" },
     { name = "scipy", specifier = ">=1.9.0" },
     { name = "tensorboard", specifier = ">=2.10.0" },
