@@ -14,8 +14,7 @@ __pycache__
 .vscode
 .venv
 .venv39
-testing/lightning_logs
 .venv_TFT
-submission/lightning_logs
 submission/*.csv
 csv_files/
+*lightning_logs/
